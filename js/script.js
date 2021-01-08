@@ -172,7 +172,7 @@ window.addEventListener('DOMContentLoaded', () => {
         clearTimeout(openMod);
     }
 
-    const openMod = setTimeout(openModal, 3000);
+    const openMod = setTimeout(openModal, 10000);
 
     modalBatons.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -194,6 +194,15 @@ window.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (evn) => {
         if (evn.code === 'Escape') {
             closeModal()
+        }
+    })
+
+    //window.pageYOffset - невидимая часть сверху, document.documentElement.clientHeight - видимая часть,
+    //document.documentElement.scrollHeight - весть документ
+    
+    window.addEventListener('scroll', () => {
+        if(window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
+            openModal();
         }
     })
 
