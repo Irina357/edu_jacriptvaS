@@ -161,35 +161,37 @@ window.addEventListener('DOMContentLoaded', () => {
         modalElement = document.querySelector('.modal'),
         modalClose = document.querySelector('.modal__close');
 
-    function closeModal(){
+    function closeModal() {
         modalElement.style.display = 'none';
-            document.body.style.overflow = '';
+        document.body.style.overflow = '';
     }
+
+    function openModal(){
+        modalElement.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+    }
+
+    const openMod = setTimeout(openModal, 3000);
 
     modalBatons.forEach(btn => {
         btn.addEventListener('click', () => {
-            modalElement.style.display = 'block';
-            document.body.style.overflow = 'hidden';
+            // modalElement.style.display = 'block';
+            // document.body.style.overflow = 'hidden';
+            openModal()
         })
     })
 
     modalClose.addEventListener('click', () => {
-        // modalElement.style.display = 'none';
-        // document.body.style.overflow = '';
         closeModal()
     })
 
     modalElement.addEventListener('click', (evn) => {
         if (evn.target) {
-            // modalElement.style.display = 'none';
-            // document.body.style.overflow = '';
             closeModal()
         }
     })
     document.addEventListener('keydown', (evn) => {
-        if(evn.code === 'Escape'){
-            // modalElement.style.display = 'none';
-            // document.body.style.overflow = '';
+        if (evn.code === 'Escape') {
             closeModal()
         }
     })
