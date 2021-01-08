@@ -98,6 +98,10 @@ window.addEventListener('DOMContentLoaded', () => {
           shortName = names.filter((name) => {
               return name.length < 3
           });
-    console.log(shortName)
+
+    //Map
+    let answers = ['Ann', 'maIk', 'IVAN'];
+        answers = answers.map((item) => item.toLocaleLowerCase());
+    
 
 })
