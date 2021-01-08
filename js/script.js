@@ -112,10 +112,48 @@ window.addEventListener('DOMContentLoaded', () => {
         return Math.max.apply(null, nameArr);
     }
 
-    console.log(getMaxOfArray(arr));
+    //console.log(getMaxOfArray(arr));
 
-    //Sprite
+    //Sprad
     const arr1 = [1,2,3,],
         arr2 = [4,5,6];
-    console.log(Math.max(...arr1,...arr2));
+    //console.log(Math.max(...arr1,...arr2));
+
+    const obj1 = {
+        name: 'ann',
+        password: '111',
+        age: 18
+    };
+    const obj2 = {
+        name1: 'Ivan',
+        password1: '222',
+    };
+    const obj3 = Object.assign(obj1, obj2);
+    const sprite = {...obj1, ...obj2};
+    //console.log(sprite);
+
+    const x = 10, y = 5;
+    const res = {
+        x, y,
+        calc() {
+            console.log(this.x * this.y)
+        }
+    };
+    //console.log(res.calc());
+
+    //destructuring
+    const {name, password} = obj1;
+    //console.log(name,password);
+     const obj4 = {
+        name1: 'Ivan',
+        password1: {
+            pass1: 123,
+            pass2: 456
+        },
+    };
+    const {password1: {pass1, pass2}} = obj4;
+    //console.log(pass1, pass2);
+    const [a,b,c] = arr1;
+    console.log(a);
+
 })
