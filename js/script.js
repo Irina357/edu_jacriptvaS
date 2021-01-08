@@ -161,18 +161,23 @@ window.addEventListener('DOMContentLoaded', () => {
         modalElement = document.querySelector('.modal'),
         modalClose = document.querySelector('.modal__close');
 
-    modalBatons.forEach(function (item) {
-        item.addEventListener('click', () => {
+    modalBatons.forEach(btn => {
+        btn.addEventListener('click', () => {
             modalElement.style.display = 'block';
             document.body.style.overflow = 'hidden';
-            // modalElement.classList.add('show');
-            // modalElement.classList.remove('hide');
         })
     })
 
     modalClose.addEventListener('click', () => {
         modalElement.style.display = 'none';
+        document.body.style.overflow = '';
     })
 
+    modalElement.addEventListener('click', (evn) => {
+        if (evn.target) {
+            modalElement.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    })
 
 })
