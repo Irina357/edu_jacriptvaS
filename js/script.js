@@ -92,12 +92,12 @@ window.addEventListener('DOMContentLoaded', () => {
     };
     setClock('.timer', deadline)
 
-    // const ccc = document.querySelector('#days');
-    // ccc.innerHTML = 'vvv';
-    // console.log(ccc);
-
-
-
-
+    //React Standard  ES6-8
+    //Filter
+    let names = ['aaaa', 'bbb', 'cccc', 'dd'],
+          shortName = names.filter((name) => {
+              return name.length < 3
+          });
+    console.log(shortName)
 
 })
