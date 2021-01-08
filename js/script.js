@@ -166,9 +166,10 @@ window.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = '';
     }
 
-    function openModal(){
+    function openModal() {
         modalElement.style.display = 'block';
-            document.body.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden';
+        clearTimeout(openMod);
     }
 
     const openMod = setTimeout(openModal, 3000);
