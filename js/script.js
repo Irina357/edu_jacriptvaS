@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const classActive = document.querySelectorAll('.tabheader__item'),
         tabcontents = document.querySelectorAll('.tabcontent'),
         parentTabs = document.querySelector('.tabcontainer');
-
+    //My code
     // classActive.forEach(function (item, i) {
     //     item.addEventListener('click', function () {
     //         classActive.forEach(function (item) {
