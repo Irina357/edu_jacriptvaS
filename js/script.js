@@ -154,6 +154,22 @@ window.addEventListener('DOMContentLoaded', () => {
     const {password1: {pass1, pass2}} = obj4;
     //console.log(pass1, pass2);
     const [a,b,c] = arr1;
-    console.log(a);
+    //console.log(a);
+
+    //Modal
+    const modalBatons = document.querySelectorAll('[data-modal]'),
+        modalElement = document.querySelector('.modal'),
+        modalClose = document.querySelector('.modal__close');
+
+    modalBatons.forEach(function (item) {
+        item.addEventListener('click', () => {
+            modalElement.style.display = 'block';
+        })
+    })
+
+    modalClose.addEventListener('click', () => {
+        modalElement.style.display = 'none';
+    })
+
 
 })
