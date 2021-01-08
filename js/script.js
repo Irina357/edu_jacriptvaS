@@ -179,5 +179,11 @@ window.addEventListener('DOMContentLoaded', () => {
             document.body.style.overflow = '';
         }
     })
+    document.addEventListener('keydown', (evn) => {
+        if(evn.code === 'Escape'){
+            modalElement.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    })
 
 })
