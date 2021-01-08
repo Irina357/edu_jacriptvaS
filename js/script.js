@@ -164,6 +164,9 @@ window.addEventListener('DOMContentLoaded', () => {
     modalBatons.forEach(function (item) {
         item.addEventListener('click', () => {
             modalElement.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            // modalElement.classList.add('show');
+            // modalElement.classList.remove('hide');
         })
     })
 
