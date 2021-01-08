@@ -102,6 +102,20 @@ window.addEventListener('DOMContentLoaded', () => {
     //Map
     let answers = ['Ann', 'maIk', 'IVAN'];
         answers = answers.map((item) => item.toLocaleLowerCase());
-    
 
+    // console.log('`hhhhh${}mmm${}`')
+
+    //Max of arr
+    const arr = [3, 5, 99];
+
+    function getMaxOfArray(nameArr) {
+        return Math.max.apply(null, nameArr);
+    }
+
+    console.log(getMaxOfArray(arr));
+
+    //Sprite
+    const arr1 = [1,2,3,],
+        arr2 = [4,5,6];
+    console.log(Math.max(...arr1,...arr2));
 })
