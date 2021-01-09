@@ -199,11 +199,52 @@ window.addEventListener('DOMContentLoaded', () => {
 
     //window.pageYOffset - невидимая часть сверху, document.documentElement.clientHeight - видимая часть,
     //document.documentElement.scrollHeight - весть документ
-    
+
     window.addEventListener('scroll', () => {
         if(window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
             openModal();
         }
     })
+
+    //Cards
+    const container = document.querySelector('.menu__field .container'),
+        menuItem = document.querySelector('.menu__item');
+
+    class Card {
+        constructor(parrentSelector, title, text, price, img) {
+            this.parrentSelector = parrentSelector;
+            //this.selector = selector;
+            this.img = img;
+            this.tittle = title;
+            this.text = text;
+            this.price = price;
+        }
+
+        createCard() {
+            const div = document.createElement('div');
+            div.classList.add('menu__item')
+            div.innerHTML = `<img src="${this.img}" alt="vegy">
+                    <h3 class="menu__item-subtitle">${this.tittle}</h3>
+                    <div class="menu__item-descr">${this.text}</div>
+                    <div class="menu__item-divider"></div>
+                    <div class="menu__item-price">
+                        <div class="menu__item-cost">Цена:</div>
+                        <div class="menu__item-total"><span>${this.price}</span> грн/день</div>
+                    </div>`;
+            this.parrentSelector.append(div);
+        }
+    }
+
+    const card1 = new Card(container, 'Меню "Фитнес', 'Меню "Фитнес" - это новый подход к приготовлению блюд:',
+        229, 'img/tabs/vegy.jpg');
+    card1.createCard();
+    const card2 = new Card(container, 'Меню “Премиум', 'Постное” - это тщательный подбор ингредиентов: полное отсутствие продуктов животного происхождения, моло',
+        550, 'img/tabs/elite.jpg');
+    card2.createCard();
+    const card3 = new Card(container, 'Меню "Постное', 'Меню "Фитнес" - это новый подход к приготовлению блюд:',
+        430, 'img/tabs/post.jpg');
+    card3.createCard();
+
+
 
 })
