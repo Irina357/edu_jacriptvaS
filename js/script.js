@@ -213,7 +213,6 @@ window.addEventListener('DOMContentLoaded', () => {
     class Card {
         constructor(parrentSelector, title, text, price, img) {
             this.parrentSelector = parrentSelector;
-            //this.selector = selector;
             this.img = img;
             this.tittle = title;
             this.text = text;
@@ -235,14 +234,26 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    const card1 = new Card(container, 'Меню "Фитнес', 'Меню "Фитнес" - это новый подход к приготовлению блюд:',
-        229, 'img/tabs/vegy.jpg');
+    const card1 = new Card(
+        container,
+        'Меню "Фитнес',
+        'Меню "Фитнес" - это новый подход к приготовлению блюд:',
+        229,
+        'img/tabs/vegy.jpg');
     card1.createCard();
-    const card2 = new Card(container, 'Меню “Премиум', 'Постное” - это тщательный подбор ингредиентов: полное отсутствие продуктов животного происхождения, моло',
-        550, 'img/tabs/elite.jpg');
+    const card2 = new Card(
+        container,
+        'Меню “Премиум',
+        'Постное” - это тщательный подбор ингредиентов: полное отсутствие продуктов животного происхождения, моло',
+        550,
+        'img/tabs/elite.jpg');
     card2.createCard();
-    const card3 = new Card(container, 'Меню "Постное', 'Меню "Фитнес" - это новый подход к приготовлению блюд:',
-        430, 'img/tabs/post.jpg');
+    const card3 = new Card(
+        container,
+        'Меню "Постное',
+        'Меню "Фитнес" - это новый подход к приготовлению блюд:',
+        430,
+        'img/tabs/post.jpg');
     card3.createCard();
 
 
