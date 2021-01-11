@@ -256,6 +256,66 @@ window.addEventListener('DOMContentLoaded', () => {
         'img/tabs/post.jpg');
     card3.createCard();
 
+    //carousel
 
+    const slideItems = document.querySelectorAll('.offer__slide'),
+        arrowPrev = document.querySelector('.offer__slider-prev'),
+        arrowNext = document.querySelector('.offer__slider-next'),
+        currentTextСontent = document.querySelector('#current'),
+        totalTextContent = document.querySelector('#total');
+    let i;
+
+    function showCurrentTexContent(number, selectorTexContent) {
+        if (number < 10) {
+            selectorTexContent.textContent = `0${number}`;
+        } else {
+            selectorTexContent.textContent = number;
+        }
+    }
+
+    function slideHide(selectorSlide) {
+        selectorSlide.forEach((item) => {
+            item.style.display = 'none';
+        })
+    }
+
+    function showSlide(selectorSlides, n) {
+        selectorSlides.forEach(function (item, j) {
+            if (n === j + 1) {
+                slideItems[j].style.display = 'block';
+            }
+        })
+    }
+
+    totalTextContent.textContent = slideItems.length;
+    slideHide(slideItems);
+    slideItems[2].style.display = 'block';
+
+    arrowNext.addEventListener('click', function () {
+        slideHide(slideItems);
+        i = +currentTextСontent.textContent;
+        i++;
+        showCurrentTexContent(i, currentTextСontent);
+        showSlide(slideItems, i);
+        if (i >= slideItems.length + 1) {
+            i = 1;
+            currentTextСontent.textContent = '0' + i;
+            slideItems[0].style.display = 'block';
+        }
+    })
+
+    arrowPrev.addEventListener('click', function () {
+        slideHide(slideItems);
+        i = +currentTextСontent.textContent;
+        if (i <= 1) {
+            i = slideItems.length;
+            currentTextСontent.textContent = i;
+            slideItems[i - 1].style.display = 'block';
+        } else {
+            i--;
+            showCurrentTexContent(i, currentTextСontent);
+            showSlide(slideItems, i);
+        }
+    })
 
 })
